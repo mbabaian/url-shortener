@@ -11,4 +11,4 @@ Build a full stack JavaScript app that is functionally similar to this: https://
 
 - [ ] User Story: When I visit that shortened URL, it will redirect me to my original link.
 
-[Live version](https://full-feather.glitch.me)
+[Live version](https://itty-bitty.glitch.me)
