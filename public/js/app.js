@@ -1,5 +1,5 @@
 // Angular application
-
+//var angular = require('angular')
 var app = angular.module('shortUrlApp', []);
 
 app.controller('shortAppCtrl', ($scope) => {
