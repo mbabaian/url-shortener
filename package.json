@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Monica Babaian",
@@ -13,6 +14,11 @@
     "cors": "^2.8.4",
     "express": "^4.16.2",
     "mongodb": "^3.0.2",
-    "mongoose": "^5.0.4"
+    "mongoose": "^5.0.4",
+    "angular": "^1.6.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh//https://github.com/mbabaian/url-shortener.git"
   }
 }
