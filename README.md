@@ -11,6 +11,7 @@ Build a full stack JavaScript app that is functionally similar to this: https://
 
 - [ ] User Story: When I visit that shortened URL, it will redirect me to my original link.
 
+<<<<<<< HEAD
 ### Example Query
 ```
 https://itty-bitty.glitch.me/new/https://www.google.com
@@ -27,4 +28,6 @@ https://itty-bitty.glitch.me//new/http://foo.com:80
 https://itty-bitty.glitch.me/2871
 ```
 
+=======
+>>>>>>> a9927db3ea6c90c24adfa551d07272cdddb29012
 [Live version](https://itty-bitty.glitch.me)

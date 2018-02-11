@@ -15,9 +15,16 @@
     "cors": "^2.8.4",
     "express": "^4.16.2",
     "mongodb": "^3.0.2",
+<<<<<<< HEAD
     "mongoose": "^5.0.4"
   },
   "respository": {
+=======
+    "mongoose": "^5.0.4",
+    "angular": "^1.6.9"
+  },
+  "repository": {
+>>>>>>> a9927db3ea6c90c24adfa551d07272cdddb29012
     "type": "git",
     "url": "git+ssh//https://github.com/mbabaian/url-shortener.git"
   }
