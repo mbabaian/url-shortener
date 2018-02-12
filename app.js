@@ -17,7 +17,7 @@ app.use(bodyParser.json())
 app.use(cors())
 
 // connect to db
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/shortUrls')
+mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true}|| 'mongodb://localhost/shortUrls')
 
 
 // allows Node to get static content
