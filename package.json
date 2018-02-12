@@ -1,7 +1,7 @@
 {
   "name": "url_short",
   "version": "1.0.0",
-  "description": "",
+  "description": "URL Shortener microservice",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -10,12 +10,12 @@
   "author": "Monica Babaian",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.6.9",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.2",
     "mongodb": "^3.0.2",
-    "mongoose": "^5.0.4",
-    "angular": "^1.6.9"
+    "mongoose": "^5.0.4"
   },
   "repository": {
     "type": "git",

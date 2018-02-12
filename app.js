@@ -1,11 +1,15 @@
 // Tutorial https://www.youtube.com/watch?v=5T1YDRWaa3k
 
+// connect to db at mongodb://<dbuser>:<dbpassword>@ds231568.mlab.com:31568/url_short
+
+
 // get requirements and set instances
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const mongoose = require('mongoose')
+const mongodb = require('mongodb')
 // set up model
 const shortUrl = require('./models/shortUrl')
 
@@ -13,7 +17,7 @@ app.use(bodyParser.json())
 app.use(cors())
 
 // connect to db
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/shortUrls')
+mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true}|| 'mongodb://localhost/shortUrls')
 
 
 // allows Node to get static content
@@ -46,8 +50,8 @@ app.get('/new/:urlToShorten(*)', (req, res, next) => {
         return res.json(data)
     }
     var data = new shortUrl({
-        originalUrl: 'urlToShorten does not match',
-        shorterUrl: 'Invaled URL'
+        originalUrl: 'Request URL does not match format',
+        shorterUrl: 'Invalid URL'
     })
     return res.json(data)
 
