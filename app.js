@@ -17,7 +17,7 @@ app.use(bodyParser.json())
 app.use(cors())
 
 // connect to db
-mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true}|| 'mongodb://localhost/shortUrls')
+mongoose.connect(process.env.MONGOLAB_URI, {useMongoClient: true}|| 'mongodb://localhost/shortUrls')
 
 
 // allows Node to get static content
@@ -44,17 +44,21 @@ app.get('/new/:urlToShorten(*)', (req, res, next) => {
         )
 
         data.save(err => {
-            if (err) return res.send('Error saving to database')
+            if (err) 
+            {
+              return res.send('Error saving to database')
+            }
         })
 
         return res.json(data)
     }
-    var data = new shortUrl({
+    var data = new shortUrl(
+      {
         originalUrl: 'Request URL does not match format',
         shorterUrl: 'Invalid URL'
-    })
+    }
+    )
     return res.json(data)
-
 })
 
 
@@ -64,7 +68,9 @@ app.get('/:urlToForward', (req, res, next) => {
     var shorterUrl = req.params.urlToForward
 // see if object already exists
 shortUrl.findOne({'shorterUrl': shorterUrl}, (err, data)=>  {
-    if (err) return res.send('Error reading database')
+    if (err) {
+      return res.send('Error reading database')
+    }
     var re = new RegExp("^(http|https)://", "i")
 
     var strToCheck = data.originalUrl
@@ -74,8 +80,7 @@ shortUrl.findOne({'shorterUrl': shorterUrl}, (err, data)=>  {
     else {
         res.redirect(301, 'http://' + data.originalUrl)
     }
-    })
-
+  })
 })
 
 // Listen to server
